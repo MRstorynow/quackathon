@@ -2,13 +2,10 @@
 var express = require('express');
 var path = require('path'); 
 var app = express();
-const DBControl = require('./DBControl');
 const bodyParser = require('body-parser');
-const Utils = require('./Utilities');
 
 // Settings
 const port = 3000
-var userID = 0
 // random stuff that helps the server accept methods from client
 app.use(express.static('public'));  
 app.use(bodyParser.urlencoded({ extended: false }));
