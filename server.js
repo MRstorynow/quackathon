@@ -45,7 +45,8 @@ app.get('/', function(req, res){
 
 app.post('/dick', function (req, res) { 
     const body = req.body; // this is the parameters sent from client
-    res.send("Doggy")
+    console.log(body.key) // this is what client sent
+    res.send("Doggy") // this is what we send client
 });
 
 var server = app.listen(port, function () { // starts the server on the localhost/port

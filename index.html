@@ -58,10 +58,12 @@
         }
     </script>
     <script>
-            $(document).ready(function(){ // when page loads do
-                document.getElementById("thing").style.display = "page loaded";
-                updatePage()
+        $(document).ready(function(){ // when page loads do
+            $.post("http://localhost:3000/dick",{key: "i am the value for the key"}, function(data){ // posts table to server, data is what server returns
+                document.getElementById("thing").style.display = data;
+                //updatePage()
             });
+        });
      </script>
 </head>
 
