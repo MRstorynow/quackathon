@@ -51,11 +51,24 @@
 		  background-color: rgb(255, 128, 0);
 		}
     </style>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+		function UpdatePage() { // does thing
+		  document.getElementById("thing").innerHTML = "hahahaha"
+        }
+    </script>
+    <script>
+            $(document).ready(function(){ // when page loads do
+                document.getElementById("thing").style.display = "page loaded";
+                updatePage()
+            });
+     </script>
 </head>
+
 	
 <body>
-    yes sir
+   <p id = "thing"></p>
+
 </body>
 
 </html>

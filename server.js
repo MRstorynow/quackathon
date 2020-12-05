@@ -43,83 +43,9 @@ app.get('/', function(req, res){
 
 // get/post requests
 
-app.post('/deposit', function (req, res) { 
+app.post('/dick', function (req, res) { 
     const body = req.body; // this is the parameters sent from client
-	console.log("Deposit request... Amount: "+body.amount+", Account Number: "+body.act_num)
-	if (!Utils.isNumber(req.body.amount)) {
-		res.send("Please enter a number"); // this is what we send back to the client once we're done
-		return;
-	}
-	DBControl.deposit(body.amount, body.act_num, res)
-	const amount = +body.amount
-});
-
-app.post('/withdraw', function (req, res) { 
-    const body = req.body; // this is the parameters sent from client
-	console.log("Withdraw request... Amount: "+body.amount+", Account Number: "+body.act_num)
-	if (!Utils.isNumber(req.body.amount)) {
-		res.send("Please enter a number"); // this is what we send back to the client once we're done
-		return;
-	}
-	DBControl.withdraw(body.amount, body.act_num, res)
-	const amount = +body.amount
-});
-
-app.post('/transfer', function (req, res) { 
-	console.log("Transfer request")
-    const body = req.body; // this is the parameters sent from client
-	const userid = Utils.getUserID(body.userid)
-	const act1 = body.act1
-	const act2 = body.act2
-	const amount = body.amount
-	DBControl.transfer(amount, act1, act2, res)
-});
-
-app.post('/addaccount', async function (req, res) { 
-	console.log("Request to add account")
-    const body = req.body; 
-	const userid = Utils.getUserID(body.userid)
-	DBControl.addAccount(userid, res)
-});
-
-app.post('/adduser', async function (req, res) { 
-	console.log("Request to add user")
-    const body = req.body; 
-	const userid = Utils.getUserID(body.userid)
-	const dob = body.dob
-	const phone = body.phone
-	DBControl.addUser(userid, dob, phone, res)
-	//res.send('done')
-});
-
-app.post('/getAccounts', async function (req, res) { 
-	
-    const body = req.body; // this is the parameters sent from client
-	const userid = Utils.getUserID(body.userid)
-	console.log("Request to get accounts of user ID: "+userid)
-	DBControl.getAccounts(userid, res)
-});
-
-app.post('/getTransactions', async function (req, res) { 
-	
-    const body = req.body; // this is the parameters sent from client
-	const userid = Utils.getUserID(body.userid)
-	console.log("Request to get transactions of user ID: "+userid)
-	DBControl.getTransactions(userid, res)
-});
-
-app.post('/totalBalance', async function (req, res) { 
-	
-    const body = req.body; // this is the parameters sent from client
-	const userid = Utils.getUserID(body.userid)
-	console.log("Request to get total balance of: "+userid)
-	DBControl.getTotalBalance(userid, res)
-});
-
-app.post('/viewAll', async function (req, res) { 
-	console.log("Request to view all")
-    const body = req.body; // this is the parameters sent from client
-	DBControl.viewAll(res)
+    res.send("Doggy")
 });
 
 var server = app.listen(port, function () { // starts the server on the localhost/port
